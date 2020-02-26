@@ -1,0 +1,17 @@
+$breakpoints: (
+  xs: "screen and (max-width: 575.98px)", //SPデバイス(576px以下)
+  sm: "(min-width: 576px) and (max-width: 767.98px)", //小デバイス（横向きモバイル,576px以上）
+  md: "(min-width: 768px) and (max-width: 991.98px)", //中デバイス（タブレット,768px以上）
+  lg: "(min-width: 992px) and (max-width: 1199.98px)", //大デバイス（デスクトップ,992px以上）
+  xl: "(min-width: 1200px)", // 特大デバイス（ワイドデスクトップ,1200px以上）
+);
+
+@mixin media($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin col($i) {
+  width: 100% / 12 * $i;
+}

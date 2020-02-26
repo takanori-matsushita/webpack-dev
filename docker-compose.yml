@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    volumes:
+      - ./src:/markup/src
+      - ./assets:/markup/assets
+      - ./package.json:/markup/package.json
+      - ./webpack.config.js:/markup/webpack.config.js
+    command: npm run watch
